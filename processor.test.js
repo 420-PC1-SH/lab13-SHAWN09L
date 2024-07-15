@@ -33,4 +33,14 @@ describe("transmission processor", function () {
         const expectedError = new Error('Data is invalid, should contain "<" & ">"')
         expect(() => { processor("1410::932829840830053761"); }).toThrow(expectedError);
     })
+
+    test("throws error if 'rawdata' does not start with '<'", function () {
+        const expectedError = new Error('Data is invalid, should contain "<"')
+        expect(() => { processor("1410::932829840830053761>"); }).toThrow(expectedError);
+    })
+
+    test("throws error if 'rawdata' does not end with '>'", function () {
+        const expectedError = new Error('Data is invalid, should contain & ">"')
+        expect(() => { processor("1410::<932829840830053761"); }).toThrow(expectedError);
+    })
 });
