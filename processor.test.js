@@ -28,7 +28,7 @@ describe("transmission processor", function () {
     });
 
     //labo-13
-    //exercise 1 - requis 1
+    //exercice 1 - requis 1
     test("throws error if 'rawdata' does not start and end with '<' & '>'", function () {
         const expectedError = new Error('Data is invalid, should contain "<" & ">"')
         expect(() => { processor("1410::932829840830053761"); }).toThrow(expectedError);
@@ -42,5 +42,11 @@ describe("transmission processor", function () {
     test("throws error if 'rawdata' does not end with '>'", function () {
         const expectedError = new Error('Data is invalid, should contain "<" & ">"')
         expect(() => { processor("1410::<932829840830053761"); }).toThrow(expectedError);
+    })
+    
+    //exercice 1 - requis 2
+    test("throws error if 'id' cannot be converted in type number", function () {
+        const expectedError = new Error('Data is invalid, "id" must be of type number');
+        expect(() => { processor("bobb::<932829840830053761"); }).toThrow(expectedError);
     })
 });
