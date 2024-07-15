@@ -47,6 +47,6 @@ describe("transmission processor", function () {
     //exercice 1 - requis 2
     test("throws error if 'id' cannot be converted in type number", function () {
         const expectedError = new Error('Data is invalid, "id" must be of type number');
-        expect(() => { processor("bobb::<932829840830053761"); }).toThrow(expectedError);
+        expect(() => { processor("bobb::<932829840830053761>"); }).toThrow(expectedError);
     })
 });
