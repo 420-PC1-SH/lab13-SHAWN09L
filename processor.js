@@ -7,6 +7,9 @@ function processor(transmission) {
     if (!rawData.includes('<' && '>') || !rawData.includes('<') || !rawData.includes('>')) {
         throw new Error('Data is invalid, should contain "<" & ">"')
     }
+    if (!/\d/.test(rawData)) {
+        throw new Error('Data is invalid, "rawdata" must be numbers');
+    }
     if (parts[0] != Number(parts[0])) {
         throw new Error('Data is invalid, "id" must be of type number');
     }
