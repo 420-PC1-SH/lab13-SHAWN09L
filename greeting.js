@@ -1,5 +1,4 @@
 function greet(name) {
-    console.log(typeof name);
     if (name == null || name == undefined || name == "") {
         return "Hello there"
     }

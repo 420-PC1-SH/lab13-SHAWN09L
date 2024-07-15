@@ -27,10 +27,16 @@ describe("Greeting", function () {
         expect(result).toEqual("HELLO, HAN");
     })
 
-    test("expect result to be 'Hello, {name[0]} & {name[1]}' if parameter is an array", function () {
+    test("expect result to be 'Hello, {name[0]} and {name[1]}' if parameter is an array of 2", function () {
         const names = ["Jango", "Boba"];
         let result = greeting(names);
         expect(result).toEqual("Hello, Jango and Boba");
+    })
+
+    test("expect result to be 'Hello, {name[0]}, {name[1]} and {name[2]}' if parameter is an array of 3", function () {
+        const names = ["Jill", "Jane", "Leia"];
+        let result = greeting(names);
+        expect(result).toEqual("Hello, Jill, Jane and Leia");
     })
 })
 
