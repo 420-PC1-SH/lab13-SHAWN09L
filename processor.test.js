@@ -49,4 +49,10 @@ describe("transmission processor", function () {
         const expectedError = new Error('Data is invalid, "id" must be of type number');
         expect(() => { processor("bobb::<932829840830053761>"); }).toThrow(expectedError);
     })
+
+    //exercice 1 - requis 3
+    test("throws error if 'rawdata' is not numbers", function () {
+        const expectedError = new Error('Data is invalid, "rawdata" must be numbers');
+        expect(() => { processor("1410::<bogGratton>"); }).toThrow(expectedError);
+    })
 });
