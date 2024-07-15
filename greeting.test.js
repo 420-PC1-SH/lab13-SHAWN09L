@@ -21,5 +21,10 @@ describe("Greeting", function () {
         let result = greeting(null);
         expect(result).toEqual("Hello there");
     })
+
+    test("expect maj characters if parameter is in maj", function () {
+        let result = greeting("HAN");
+        expect(result).toEqual("HELLO, HAN");
+    })
 })
 
