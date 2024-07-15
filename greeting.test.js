@@ -26,5 +26,11 @@ describe("Greeting", function () {
         let result = greeting("HAN");
         expect(result).toEqual("HELLO, HAN");
     })
+
+    test("expect result to be 'Hello, {name[0]} & {name[1]}' if parameter is an array", function () {
+        const names = ["Jango", "Boba"];
+        let result = greeting(names);
+        expect(result).toEqual("Hello, Jango and Boba");
+    })
 })
 
