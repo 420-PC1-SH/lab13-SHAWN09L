@@ -4,6 +4,9 @@ function processor(transmission) {
     }
     let parts = transmission.split("::");
     let rawData = parts[1];
+    if (!rawData.includes('<' && '>') || !rawData.includes('<') || !rawData.includes('>')) {
+        throw new Error('Data is invalid, should contain "<" & ">"')
+    }
     return {
         id: Number(parts[0]),
         rawData: rawData
