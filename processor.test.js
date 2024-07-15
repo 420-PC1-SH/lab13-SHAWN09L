@@ -26,4 +26,11 @@ describe("transmission processor", function () {
         let result = processor("9701::<487297403495720912>");
         expect(result.rawData).not.toEqual(undefined);
     });
+
+    //labo-13
+    //exercise 1 - requis 1
+    test("throws error if 'rawdata' does not start and end with '<' & '>'", function () {
+        const expectedError = new Error('Data is invalid, should contain "<" & ">"')
+        expect(() => { processor("1410::932829840830053761"); }).toThrow(expectedError);
+    })
 });
